@@ -1,5 +1,6 @@
-from random import shuffle
 import statistics
+
+from numpy import random
 
 BIG_N = 10 ** 5
 
@@ -8,7 +9,7 @@ def create_p_pool(M, N):
     card_deck = list(range(M)) * N  # The numbers are suit_ids
     p_pool = []
     for _ in range(BIG_N):
-        shuffle(card_deck)
+        random.shuffle(card_deck)
         p_pool.append(calculate_p(card_deck))
     return p_pool
 
