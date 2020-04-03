@@ -24,20 +24,20 @@ def calculate_p(deck: list):
     return p
 
 
-def sub_question_1_and_2():
-    p_pool = create_p_pool(2, 26)
+def sub_question_1_and_2(p_pool: list):
     p_bar = statistics.mean(p_pool)
     print("SQ1:", p_bar)
     print("SQ2:", statistics.stdev(p_pool, p_bar))
 
 
-def sub_question_3_and_4():
-    p_pool = create_p_pool(4, 52)
+def sub_question_3_and_4(p_pool: list):
     p_bar = statistics.mean(p_pool)
     print("SQ3:", p_bar)
     print("SQ4:", statistics.stdev(p_pool, p_bar))
 
 
 if __name__ == '__main__':
-    sub_question_1_and_2()
-    sub_question_3_and_4()
+    pool_2_26 = create_p_pool(2, 26)
+    pool_4_52 = create_p_pool(4, 52)
+    sub_question_1_and_2(pool_2_26)
+    sub_question_3_and_4(pool_4_52)
