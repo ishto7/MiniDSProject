@@ -36,8 +36,26 @@ def sub_question_3_and_4(p_pool: list):
     print("SQ4:", statistics.stdev(p_pool, p_bar))
 
 
+def sub_question_5_and_6(p_pool: list):
+    p_pool.sort(reverse=True)
+    try:
+        bigger_than_6 = p_pool.index(6)
+    except ValueError:
+        bigger_than_6 = len(p_pool)
+        print("Didn't found 6 in pool, falling back to default. Use bigger BIG_N")
+    try:
+        bigger_than_12 = p_pool.index(12)
+    except ValueError:
+        bigger_than_12 = len(p_pool)
+        print("Didn't found 12 in pool, falling back to default. Use bigger BIG_N")
+
+    print("Conditional probability:", bigger_than_12 / bigger_than_6)
+
+
 if __name__ == '__main__':
     pool_2_26 = create_p_pool(2, 26)
     pool_4_52 = create_p_pool(4, 52)
     sub_question_1_and_2(pool_2_26)
     sub_question_3_and_4(pool_4_52)
+    sub_question_5_and_6(pool_2_26)
+    sub_question_5_and_6(pool_4_52)
