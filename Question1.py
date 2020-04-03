@@ -31,5 +31,13 @@ def sub_question_1_and_2():
     print("SQ2:", statistics.stdev(p_pool, p_bar))
 
 
+def sub_question_3_and_4():
+    p_pool = create_p_pool(4, 52)
+    p_bar = statistics.mean(p_pool)
+    print("SQ3:", p_bar)
+    print("SQ4:", statistics.stdev(p_pool, p_bar))
+
+
 if __name__ == '__main__':
     sub_question_1_and_2()
+    sub_question_3_and_4()
